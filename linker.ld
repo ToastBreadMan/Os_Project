@@ -4,7 +4,7 @@ SECTIONS
 
 {
 
-. = 1M;
+. = 2M;
 
 .text : { *(.text) }
 

@@ -1,12 +1,11 @@
 bits 16
-global start	
+global start
+extern kmain	
 section .text
 start:
-	mov ah, 0eh
-	mov al, 'A'
-	int 0x10
-	
-	jmp $
+	cli
+	call kmain
+	hlt
 
 times 510 - ($ - $$) db 0
 dw 0xAA55
