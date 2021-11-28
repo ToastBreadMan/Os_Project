@@ -1,12 +1,13 @@
-OUTPUT_FORMAT(binary)
-ENTRY(start)
+ENTRY(_start)
 SECTIONS
 
 {
 
-. = 2M;
+. = 1M;
 
-.text : { *(.text) }
+.text : {
+*(.multiboot)
+*(.text) }
 
 .data : { *(.data) }
 
