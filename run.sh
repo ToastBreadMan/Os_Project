@@ -1,5 +1,6 @@
-nasm -f elf64 boot.asm -o boot.o
-gcc -m64 -c kernel.c -o km.o
-ld -m elf_x86_64 -T linker.ld -o kernel.bin boot.o km.o
-qemu-system-x86_64 -hda kernel.bin
-
+i686-elf-as src/boot/boot.s -o objects/boot.o
+i686-elf-gcc -m32 src/kernel/kernel.c -o objects/kernel.bin objects/boot.o -nostdlib -ffreestanding -mno-red-zone -fno-exceptions -nostdlib -T linker.ld
+cp objects/kernel.bin iso/boot/kernel.bin
+cp grub.cfg iso/boot/grub/grub.cfg
+grub-mkrescue -o os.iso iso
+qemu-system-x86_64 os.iso
