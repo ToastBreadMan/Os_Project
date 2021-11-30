@@ -1,6 +1,6 @@
 #pragma once
 
-#include "len.c"
+#include "strlen.c"
 #include "itoa.c"
 
 int textmode_x = 0;

@@ -1,5 +1,5 @@
 #include "multiboot.h"
-#include "len.c"
+#include "strlen.c"
 #include "printf.c"
 #include "itoa.c"
 
