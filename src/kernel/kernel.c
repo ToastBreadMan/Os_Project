@@ -1,8 +1,8 @@
 #include "multiboot.h"
-#include "len.c"
+#include "strlen.c"
 #include "printf.c"
 #include "itoa.c"
 
 extern void kmain(multiboot_info_t * mbd, unsigned int magic) {
-	printf("From C!");
+	printf("Number of modules provided by GRUB: %d", mbd->mods_count);
 }
