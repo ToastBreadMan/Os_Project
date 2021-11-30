@@ -1,6 +1,6 @@
 #pragma once
 
-int stren(char * str)
+int strlen(char * str)
 {
     int count = 0;
 
